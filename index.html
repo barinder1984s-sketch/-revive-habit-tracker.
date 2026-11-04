@@ -24,7 +24,14 @@ select,input[type=date],textarea{background:#0c1624;color:var(--txt);border:1px 
 .empty{color:var(--muted);text-align:center;padding:20px}
 @media(min-width:680px){main{padding:28px 22px 60px}.twocol{display:grid;grid-template-columns:1.1fr .9fr;gap:13px}.twocol>.card{margin:13px 0}}
 </style></head>
-<body><main>
+<body><script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js")
+      .catch(error => console.error(error));
+  });
+}
+</script><body><main><main>
 <header><div><div class="tag">YOUR PERSONAL RESET</div><div class="brand">REVIVE</div><p class="sub">Build better days. Track real progress.</p></div><span class="pill">8 QUESTS · 80 XP</span></header>
 <nav><button class="active" data-page="today">Today</button><button data-page="progress">Progress</button><button data-page="ranks">Rank journey</button><button data-page="history">History</button><button data-page="insights">Insights</button></nav>
 
